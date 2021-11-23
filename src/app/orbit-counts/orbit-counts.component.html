@@ -1,7 +1,7 @@
-<h3>Satellite Count:</h3>
+<h3>Satellite Counts:</h3>
 <div class="counts">
-	<div>Total (all): <span class = "counts-total">{{totalSats}}</span></div>
-	<div *ngFor = "let satType of types">Total ({{satType}}): <span class="counts-total">{{typeNums[types.indexOf(satType)]}}</span></div>
+	<div>Total: <span>{{satellites.length}}</span></div>
+	<div *ngFor = "let satType of types">{{satType}}: <span class="counts-total">{{typeNums[types.indexOf(satType)]}}</span></div>
 </div>
 
 <!--Satellite types (from link in app.component.ts): 
