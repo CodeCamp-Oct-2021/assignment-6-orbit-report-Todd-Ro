@@ -1,6 +1,9 @@
 <h3>Satellite Count:</h3>
 <div class="counts">
-	<div>Total: <span class="counts-total">NaN</span></div>
+	<div>Total (all): <span class = "counts-total">{{totalSats}}</span></div>
+	<div *ngFor = "let satType of types">Total ({{satType}}): <span class="counts-total">{{typeNums[types.indexOf(satType)]}}</span></div>
 </div>
 
+<!--Satellite types (from link in app.component.ts): 
+	Communication, Probe, Space Station, Telescope, Space Debris, Positioning-->
 <!-- TODO 4: add logic to count number of satellites displayed -->

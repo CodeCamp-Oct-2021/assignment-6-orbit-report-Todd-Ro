@@ -6,15 +6,27 @@
         <th>Orbit Type</th>
         <th>Launch Date</th>
     </tr>
-    <tr class="data-row">
-        <td>GPS 938</td>
+    <tr class="data-row" *ngFor = "let satell of satellites">
+        <!--Each satellite is created with 
+        let satellite = new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, 
+        fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);-->
+        <td>{{satell.name}}</td>
+        <td [class.warning]="satell.isDebris">{{satell.type}}</td>
+        <td>{{satell.operational}}</td>
+        <!--We need to add the 'warning' type from orbit-list.component.css to the orbitType td,
+        but only for satellites where the isSpaceDebris() method from satellite.ts returns true.-->
+        <td>{{satell.orbitType}}</td>
+        <td>{{satell.launchDate}}</td>
+        <!--<td>GPS 938</td>
         <td>Positioning</td>
         <td>true</td>
         <td>HIGH</td>
-        <td>2001-11-01</td>
+        <td>2001-11-01</td>-->
     </tr>
 </table>
 
 <!-- TODO 2b: use *ngFor to display satellite data in the table -->
+<!-- The satellites property is defined in app.component.html based on displayList 
+from app.component.ts.-->
 <!-- TODO 3b: add style directive to conditionally highlight satellite type -->
 
